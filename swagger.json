@@ -1,1 +1,794 @@
-
+{
+  "openapi" : "3.0.0",
+  "servers" : [ {
+    "description" : "SwaggerHub API Auto Mocking",
+    "url" : "https://virtserver.swaggerhub.com/GoVelo/GoVelo/1.0.0"
+  } ],
+  "info" : {
+    "description" : "Urls d'API GoVélo!",
+    "version" : "0.1.0",
+    "title" : "URL d'API GoVélo!",
+    "contact" : {
+      "email" : "gmirmand@gmail.com"
+    },
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "tags" : [ {
+    "name" : "developer",
+    "description" : "Operations available to regular developers"
+  } ],
+  "paths" : {
+    "/user" : {
+      "get" : {
+        "tags" : [ "Users" ],
+        "summary" : "get Users",
+        "operationId" : "searchUser",
+        "description" : "Search User\n",
+        "responses" : {
+          "200" : {
+            "description" : "search results matching criteria"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Users" ],
+        "summary" : "add User",
+        "operationId" : "addInventory",
+        "description" : "Adds an item to the system",
+        "responses" : {
+          "201" : {
+            "description" : "item created"
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
+          },
+          "409" : {
+            "description" : "an existing item already exists"
+          }
+        },
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UserItem"
+              }
+            }
+          },
+          "description" : "Inventory item to add"
+        }
+      }
+    },
+    "/user/{id_user}" : {
+      "get" : {
+        "tags" : [ "Users" ],
+        "summary" : "get specific User",
+        "operationId" : "searchUser",
+        "description" : "Search User\n",
+        "responses" : {
+          "200" : {
+            "description" : "search results matching criteria"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "Users" ],
+        "summary" : "edit specific User",
+        "operationId" : "editInventory",
+        "description" : "Edit an item to the system",
+        "responses" : {
+          "201" : {
+            "description" : "item created"
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
+          },
+          "409" : {
+            "description" : "an existing item already exists"
+          }
+        },
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UserItem"
+              }
+            }
+          },
+          "description" : "Inventory item to add"
+        }
+      },
+      "delete" : {
+        "tags" : [ "Users" ],
+        "summary" : "delete specific User",
+        "operationId" : "searchUser",
+        "description" : "Search User\n",
+        "responses" : {
+          "200" : {
+            "description" : "search results matching criteria"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/medal" : {
+      "get" : {
+        "tags" : [ "Medals" ],
+        "summary" : "get medals",
+        "operationId" : "searchMedal",
+        "description" : "Search Medal\n",
+        "responses" : {
+          "200" : {
+            "description" : "search results matching criteria"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/medal/{id_user}" : {
+      "get" : {
+        "tags" : [ "Medals" ],
+        "summary" : "get specific User's medals",
+        "operationId" : "searchMedal",
+        "description" : "Search Medal\n",
+        "responses" : {
+          "200" : {
+            "description" : "search results matching criteria"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Medals" ],
+        "summary" : "add a medal to user",
+        "operationId" : "addInventory",
+        "description" : "Adds an item to the system",
+        "responses" : {
+          "201" : {
+            "description" : "item created"
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
+          },
+          "409" : {
+            "description" : "an existing item already exists"
+          }
+        },
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MedalItem"
+              }
+            }
+          },
+          "description" : "Inventory item to add"
+        }
+      }
+    },
+    "/comment/{id_announcement}" : {
+      "get" : {
+        "tags" : [ "Comments" ],
+        "summary" : "get comment of a announcement",
+        "operationId" : "searchComment",
+        "description" : "Search Comment\n",
+        "responses" : {
+          "200" : {
+            "description" : "search results matching criteria"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Comments" ],
+        "summary" : "add a comment",
+        "operationId" : "addInventory",
+        "description" : "Adds an item to the system",
+        "responses" : {
+          "201" : {
+            "description" : "item created"
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
+          },
+          "409" : {
+            "description" : "an existing item already exists"
+          }
+        },
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CommentItem"
+              }
+            }
+          },
+          "description" : "Inventory item to add"
+        }
+      }
+    },
+    "/comment/{id_comment}" : {
+      "put" : {
+        "tags" : [ "Comments" ],
+        "summary" : "edit a comment",
+        "operationId" : "editInventory",
+        "description" : "Edit an item to the system",
+        "responses" : {
+          "201" : {
+            "description" : "item created"
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
+          },
+          "409" : {
+            "description" : "an existing item already exists"
+          }
+        },
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CommentItem"
+              }
+            }
+          },
+          "description" : "Inventory item to add"
+        }
+      },
+      "delete" : {
+        "tags" : [ "Comments" ],
+        "summary" : "delete specific comment",
+        "operationId" : "searchUser",
+        "description" : "Search User\n",
+        "responses" : {
+          "200" : {
+            "description" : "search results matching criteria"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/verified/{id_user}" : {
+      "get" : {
+        "tags" : [ "Verified" ],
+        "summary" : "get a verified data user",
+        "operationId" : "searchVerified",
+        "description" : "Search Verified\n",
+        "responses" : {
+          "200" : {
+            "description" : "search results matching criteria"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Verified" ],
+        "summary" : "add a verified data user",
+        "operationId" : "addInventory",
+        "description" : "Adds an item to the system",
+        "responses" : {
+          "201" : {
+            "description" : "item created"
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
+          },
+          "409" : {
+            "description" : "an existing item already exists"
+          }
+        },
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/VerifiedItem"
+              }
+            }
+          },
+          "description" : "Inventory item to add"
+        }
+      },
+      "put" : {
+        "tags" : [ "Verified" ],
+        "summary" : "edit a verified data user",
+        "operationId" : "editVerified",
+        "description" : "Edit an item to the system",
+        "responses" : {
+          "201" : {
+            "description" : "item created"
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
+          },
+          "409" : {
+            "description" : "an existing item already exists"
+          }
+        },
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/VerifiedItem"
+              }
+            }
+          },
+          "description" : "Inventory item to add"
+        }
+      },
+      "delete" : {
+        "tags" : [ "Verified" ],
+        "summary" : "delete a verified data user",
+        "operationId" : "searchVerified",
+        "description" : "Search User\n",
+        "responses" : {
+          "200" : {
+            "description" : "search results matching criteria"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/order/{id_user}" : {
+      "get" : {
+        "tags" : [ "Order" ],
+        "summary" : "get order by owner",
+        "operationId" : "searchOrder",
+        "description" : "Search Order\n",
+        "responses" : {
+          "200" : {
+            "description" : "search results matching criteria"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Order" ],
+        "summary" : "add order by owner",
+        "operationId" : "add order",
+        "description" : "Adds an item to the system",
+        "responses" : {
+          "201" : {
+            "description" : "item created"
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
+          },
+          "409" : {
+            "description" : "an existing item already exists"
+          }
+        },
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderItem"
+              }
+            }
+          },
+          "description" : "Inventory item to add"
+        }
+      },
+      "put" : {
+        "tags" : [ "Order" ],
+        "summary" : "edit order by owner",
+        "operationId" : "editOrder",
+        "description" : "Edit an item to the system",
+        "responses" : {
+          "201" : {
+            "description" : "item created"
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
+          },
+          "409" : {
+            "description" : "an existing item already exists"
+          }
+        },
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderItem"
+              }
+            }
+          },
+          "description" : "Inventory item to add"
+        }
+      }
+    },
+    "/style" : {
+      "get" : {
+        "tags" : [ "Styles" ],
+        "summary" : "get style list",
+        "operationId" : "searchStyle",
+        "description" : "Search Style\n",
+        "responses" : {
+          "200" : {
+            "description" : "search results matching criteria"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/style/{id_announcement}" : {
+      "get" : {
+        "tags" : [ "Styles" ],
+        "summary" : "get style of announce",
+        "operationId" : "searchStyle",
+        "description" : "Search Style\n",
+        "responses" : {
+          "200" : {
+            "description" : "search results matching criteria"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Styles" ],
+        "summary" : "add style of announce",
+        "operationId" : "add style of announce",
+        "description" : "Adds an item to the system",
+        "responses" : {
+          "201" : {
+            "description" : "item created"
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
+          },
+          "409" : {
+            "description" : "an existing item already exists"
+          }
+        },
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/StyleItem"
+              }
+            }
+          },
+          "description" : "Inventory item to add"
+        }
+      },
+      "put" : {
+        "tags" : [ "Styles" ],
+        "summary" : "edit style of announce",
+        "operationId" : "editStyle",
+        "description" : "Edit an item to the system",
+        "responses" : {
+          "201" : {
+            "description" : "item created"
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
+          },
+          "409" : {
+            "description" : "an existing item already exists"
+          }
+        },
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/StyleItem"
+              }
+            }
+          },
+          "description" : "Inventory item to add"
+        }
+      }
+    },
+    "/calendar/{id_announcement}" : {
+      "get" : {
+        "tags" : [ "Calendar" ],
+        "summary" : "get calendar of announce",
+        "operationId" : "searchCalendar",
+        "description" : "Search Calendar\n",
+        "responses" : {
+          "200" : {
+            "description" : "search results matching criteria"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/calendar/{id_announcement}/{id_calendar}" : {
+      "post" : {
+        "tags" : [ "Calendar" ],
+        "summary" : "add date in calendar of announce",
+        "operationId" : "addCalendar",
+        "description" : "Adds an item to the system",
+        "responses" : {
+          "201" : {
+            "description" : "item created"
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
+          },
+          "409" : {
+            "description" : "an existing item already exists"
+          }
+        },
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CalendarItem"
+              }
+            }
+          },
+          "description" : "Inventory item to add"
+        }
+      },
+      "put" : {
+        "tags" : [ "Calendar" ],
+        "summary" : "edit date in calendar of announce",
+        "operationId" : "editStyle",
+        "description" : "Edit an item to the system",
+        "responses" : {
+          "201" : {
+            "description" : "item created"
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
+          },
+          "409" : {
+            "description" : "an existing item already exists"
+          }
+        },
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CalendarItem"
+              }
+            }
+          },
+          "description" : "Inventory item to add"
+        }
+      },
+      "delete" : {
+        "tags" : [ "Calendar" ],
+        "summary" : "delete date in calendar of announce",
+        "operationId" : "searchVerified",
+        "description" : "Delete date calendar\n",
+        "responses" : {
+          "200" : {
+            "description" : "search results matching criteria"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "UserItem" : {
+        "type" : "object",
+        "required" : [ "id", "mail", "firstname", "lastname", "phone", "birth", "picture", "sexe", "password", "subscribeDate" ],
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "mail" : {
+            "type" : "string",
+            "example" : "govelo@gmail.com"
+          },
+          "firstname" : {
+            "type" : "string",
+            "example" : "Clark"
+          },
+          "lastname" : {
+            "type" : "string",
+            "example" : "Kent"
+          },
+          "phone" : {
+            "type" : "string",
+            "example" : "0606060606"
+          },
+          "birth" : {
+            "type" : "string",
+            "format" : "date",
+            "example" : "1981-08-29"
+          },
+          "picture" : {
+            "type" : "string",
+            "example" : "path/pp-12584.png"
+          },
+          "sexe" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "password" : {
+            "type" : "string",
+            "format" : "password",
+            "example" : "ac3253e4aa67143a2d4e9cab33f04da1f6a39343"
+          },
+          "subscribeDate" : {
+            "type" : "string",
+            "format" : "date",
+            "example" : "2016-08-29"
+          }
+        }
+      },
+      "MedalItem" : {
+        "type" : "object",
+        "required" : [ "id", "name", "desc", "image" ],
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "name" : {
+            "type" : "string",
+            "example" : "Gold"
+          },
+          "desc" : {
+            "type" : "string",
+            "example" : "A fait 5 locations"
+          },
+          "image" : {
+            "type" : "string",
+            "example" : "path/medal-gold.png"
+          }
+        }
+      },
+      "CommentItem" : {
+        "type" : "object",
+        "required" : [ "id", "note", "comment", "author_id", "receiver_id" ],
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "note" : {
+            "type" : "integer",
+            "example" : 4
+          },
+          "comment" : {
+            "type" : "string",
+            "example" : "Rendez-vous très agréable et bon vélo"
+          },
+          "author_id" : {
+            "type" : "integer",
+            "example" : 156
+          },
+          "reveiver_id" : {
+            "type" : "integer",
+            "example" : 49
+          }
+        }
+      },
+      "VerifiedItem" : {
+        "type" : "object",
+        "required" : [ "id", "scan_id", "scan_rc" ],
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "scran_id" : {
+            "type" : "string",
+            "example" : "path/scan-id-156.png"
+          },
+          "scan_rc" : {
+            "type" : "string",
+            "example" : "path/scan-rc-156.png"
+          }
+        }
+      },
+      "OrderItem" : {
+        "type" : "object",
+        "required" : [ "id", "id_announce", "id_author", "id_receiver", "start", "end", "price" ],
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "id_announce" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "id_author" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "id_receiver" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "start" : {
+            "type" : "string",
+            "format" : "int32",
+            "example" : "2016-08-29T09:12:33+00:00"
+          },
+          "end" : {
+            "type" : "string",
+            "format" : "int32",
+            "example" : "2016-08-29T09:12:33+00:00"
+          },
+          "price" : {
+            "type" : "number",
+            "format" : "float",
+            "example" : "9.5"
+          }
+        }
+      },
+      "StyleItem" : {
+        "type" : "object",
+        "required" : [ "id", "style" ],
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "scran_id" : {
+            "type" : "string",
+            "example" : "VTT"
+          }
+        }
+      },
+      "CalendarItem" : {
+        "type" : "object",
+        "required" : [ "id", "type", "start", "end", "price", "id_announce" ],
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "type" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "start" : {
+            "type" : "string",
+            "format" : "int32",
+            "example" : "2016-08-29T09:12:33+00:00"
+          },
+          "end" : {
+            "type" : "string",
+            "format" : "int32",
+            "example" : "2016-08-29T09:12:33+00:00"
+          },
+          "id_announce" : {
+            "type" : "integer",
+            "example" : 1
+          }
+        }
+      }
+    }
+  }
+}
